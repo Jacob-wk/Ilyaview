@@ -1,0 +1,1373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ilyaview Community Heritage Site, Saskatchewan</title>
+    <style>
+        body {
+            background-color: #faf8f0; /* lightly yellowed paper */
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Tahoma, Arial, sans-serif; /* era-appropriate default */
+        }
+        
+        .Hdlnr {
+            font-weight: bold;
+            font-size: 12pt;
+            color: #000066;
+            margin: 10px 0 5px 0;
+        }
+        
+        .Body {
+            font-size: 10pt;
+            line-height: 14pt;
+            color: #000;
+        }
+        
+        a {
+            color: #003366; /* darker link blue */
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        a:hover {
+            color: #000099;
+        }
+        
+        .mainTable {
+            background: #fffffb;
+            border: 1px solid #222;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+        }
+        
+        .leftColumn {
+            border-right: 1px solid #333;
+            border-top: 1px solid #333;
+            width: 315px;
+            vertical-align: top;
+            padding: 20px;
+        }
+        
+        .rightColumn {
+            border-top: 1px solid #333;
+            width: 585px;
+            vertical-align: top;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .sectionBox {
+            border-style: double;
+            border-color: #b0a89a;
+            margin: 20px 0;
+            padding: 10px;
+            background: #fffef6;
+        }
+        
+        .thumbnailImg {
+            cursor: pointer;
+            border-style: double;
+            border-color: #b0a89a;
+            margin: 5px;
+        }
+        
+        .largeImg {
+            border-style: double;
+            border-color: #b0a89a;
+            margin: 15px 0;
+        }
+        
+        .navButton {
+            background: linear-gradient(#5c7a52, #4a6741);
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 3px;
+            margin: 3px;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 10pt;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
+        }
+        
+        .navButton:hover {
+            background: linear-gradient(#6a8a60, #5a7751);
+            color: white;
+        }
+        
+        .navButton.inactive {
+            background: #999;
+            cursor: not-allowed;
+        }
+        
+        .messageBoard {
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .message {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            margin: 0;
+        }
+        
+        .messageHeader {
+            font-weight: bold;
+            color: #000066;
+            font-size: 9pt;
+            margin-bottom: 5px;
+        }
+        
+        .messageContent {
+            font-size: 9pt;
+            line-height: 12pt;
+        }
+    .messageActions { margin-top: 6px; font-size: 8pt; color: #666; }
+    .messageActions a { color: #003366; text-decoration: underline; }
+    .messageActions a:hover { color: #000099; }
+    /* Threaded reply visuals */
+    .message-reply-1 { margin-left: 20px; border-left: 2px solid #ccc; padding-left: 10px; }
+    .message-reply-2 { margin-left: 40px; border-left: 2px solid #aaa; padding-left: 10px; }
+    .message-reply-3 { margin-left: 60px; border-left: 2px solid #888; padding-left: 10px; }
+    .replyMeta { font-size: 8pt; color: #777; margin-top: 3px; }
+        
+        .postControls {
+            border: 1px solid #ccc;
+            background: #fffef6;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 9pt;
+            text-align: left;
+        }
+        .postControls label { display: block; margin: 6px 0 2px; color: #333; }
+        .postControls input[type="text"] {
+            width: 60%;
+            padding: 5px;
+            border: 1px solid #bbb;
+            font-size: 9pt;
+        }
+        .postControls textarea {
+            width: 100%;
+            height: 80px;
+            padding: 5px;
+            border: 1px solid #bbb;
+            font-family: Arial, sans-serif;
+            font-size: 9pt;
+        }
+        .postButton {
+            background: #4a6741;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            margin-top: 8px;
+            cursor: pointer;
+            font-size: 9pt;
+        }
+        .postButton:hover { background: #5a7751; }
+        
+        .hidden {
+            display: none;
+        }
+        /* Retro BBS-style upload UI */
+        .uploadBox {
+            border-top: 1px dashed #bbb;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+        .uploadBox .sectionTitle {
+            font-weight: bold;
+            color: #000066;
+            margin-bottom: 6px;
+        }
+        .uploadRow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .uploadRow label { margin: 0 6px 0 0; color: #333; }
+        .uploadRow input[type="file"] { font-size: 9pt; }
+        .uploadProto { font-size: 9pt; color: #333; margin: 6px 0; }
+        .uploadProto label { margin-right: 10px; }
+        .uploadButton { background: #4a5a8a; color: #fff; border: none; padding: 5px 10px; font-size: 9pt; cursor: pointer; }
+        .uploadButton:hover { background: #596a9b; }
+        .queueBox { font-size: 9pt; color: #333; background: #fffffb; border: 1px solid #ddd; padding: 6px; margin-top: 8px; }
+        .bbsNote { color: #666; font-size: 8pt; margin-top: 6px; }
+    </style>
+    <script language="javascript">
+        let currentView = 'home';
+        
+        function change_pic(img_name, img_src) {
+            document.getElementById(img_name).src = img_src;
+        }
+        
+        // Optional 2010s authenticity: lightly degrade main image and overlay a camera-style timestamp
+        const photoDates = {
+            'Church2013.png': '2013:06:21 18:42:03',
+            'Illyaville Township.jpg': '2012:08:14 10:25:19',
+            'catania-italy-april-7-2018-260nw-1372205186.webp': '2011:04:24 09:15:00'
+        };
+
+        function setMainImage(src, overlayText) {
+            const target = document.getElementById('mainImage');
+            if (!target) return;
+            try {
+                const width = target.width || 530;
+                const height = target.height || 270;
+                const img = new Image();
+                img.onload = function() {
+                    try {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = width; canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+
+                        // Downscale then upscale to introduce a mild blur/pixel mix
+                        const downW = Math.max(Math.round(width * 0.45), 1);
+                        const downH = Math.max(Math.round(height * 0.45), 1);
+                        const off = document.createElement('canvas');
+                        off.width = downW; off.height = downH;
+                        const ox = off.getContext('2d');
+                        ox.imageSmoothingEnabled = true;
+                        ox.drawImage(img, 0, 0, downW, downH);
+                        ctx.imageSmoothingEnabled = false;
+                        ctx.drawImage(off, 0, 0, downW, downH, 0, 0, width, height);
+
+                        // Subtle warm wash
+                        ctx.fillStyle = 'rgba(255, 240, 200, 0.05)';
+                        ctx.fillRect(0, 0, width, height);
+
+                        // Timestamp overlay (EXIF-like)
+                        if (overlayText) {
+                            const boxW = 155, boxH = 18, pad = 5;
+                            ctx.fillStyle = 'rgba(0,0,0,0.6)';
+                            ctx.fillRect(width - boxW - pad, height - boxH - pad, boxW, boxH);
+                            ctx.font = '12px "Courier New", monospace';
+                            ctx.fillStyle = '#9f9';
+                            ctx.fillText(overlayText, width - boxW - pad + 5, height - boxH - pad + 13);
+                        }
+
+                        const data = canvas.toDataURL('image/jpeg', 0.72);
+                        target.src = data;
+                    } catch (e) {
+                        // Fallback: just set the original source
+                        target.src = src;
+                    }
+                };
+                img.src = src;
+            } catch (e) {
+                target.src = src;
+            }
+        }
+
+        function showPhoto(src) {
+            setMainImage(src, photoDates[src] || '2010:07:15 12:00:00');
+        }
+        
+        function showSection(section) {
+            // Hide all sections
+            document.getElementById('homeContent').className = 'hidden';
+            document.getElementById('boardContent').className = 'hidden';
+            document.getElementById('archivesContent').className = 'hidden';
+            document.getElementById('weatherContent').className = 'hidden';
+            
+            // Show selected section
+            document.getElementById(section + 'Content').className = '';
+            currentView = section;
+        }
+        
+        function showAlert(message) {
+            alert(message);
+        }
+        
+        function postDisabled() {
+            alert('Posting temporarily disabled during community preparations.\nPlease email heritage@ilyaview.sasktel.net');
+            return false;
+        }
+        function uploadDisabled(protocol) {
+            alert('File uploads are paused by SYSOP.\nProtocol: ' + (protocol || 'ZMODEM') + '\nPlease email attachments to heritage@ilyaview.sasktel.net');
+            return false;
+        }
+        
+    const userInfoMap = {
+            'Committee': '8 posts • Joined Dec 2010',
+            'Tommy K.': '3 posts • Joined Jan 2010',
+            'Martha K.': '25 posts • Joined Jan 2010',
+            'Elena P.': '35 posts • Joined Dec 2010',
+            'David M.': '12 posts • Joined Jan 2010',
+            'Peter S.': '18 posts • Joined Jan 2010',
+            'Father Dimitri': '8 posts • Joined Feb 2010',
+            'Linda H.': '6 posts • Joined Mar 2010',
+            'Marie K.': '4 posts • Joined Feb 2010',
+            'Mike P.': '3 posts • Joined Jan 2010', 
+            'Oxy K.': '2 posts • Joined Jan 2010', 
+            'Jessica S.': '2 posts • Joined Jan 2010',
+            'Wally H.': '5 posts • Joined Jan 2010', 
+            'Tom S.': '2 posts • Joined Jan 2010',
+            'invalid': '8 posts • Guest_Poster'
+        };
+
+        // Pick a display time based on year, author, content, and specific post number rules
+        function pickTimeByRules(count, dateStr, contentText, author) {
+            const overrides = { 98: '3:33 AM', 103: '3:33 AM', 108: '3:33 AM', 115: '3:33 AM', 129: '8:45 PM' };
+            if (overrides[count]) return overrides[count];
+            let year = 2010, day = 1;
+            try {
+                const m = dateStr.match(/(\w+)\s+(\d{1,2}),\s*(\d{4})/);
+                if (m) { day = parseInt(m[2], 10) || 1; year = parseInt(m[3], 10) || 2010; }
+            } catch (e) {}
+            const t = (contentText || '').toLowerCase();
+            const strange = /(circle|hum\b|humming|emf|anomal|solstice|lightning|glass|spiral|tone|resonat|grid|bell rope|3\.33|phenomenon|formation)/.test(t);
+            if (strange && year >= 2012) return (count % 2 === 0) ? '11:47 PM' : '12:33 AM';
+            if (author === 'David M.' && year >= 2012) {
+                const pool = ['5:40 AM','6:15 AM','10:55 PM','11:47 PM','12:33 AM','1:05 AM'];
+                return pool[(count + day) % pool.length];
+            }
+            if (author === 'Peter S.') {
+                const pool = ['7:05 PM','7:45 PM','8:10 PM','8:40 PM','9:05 PM'];
+                return pool[(count + day) % pool.length];
+            }
+            if (author === 'Committee') {
+                const pool = ['9:05 AM','9:40 AM','10:20 AM','10:55 AM','11:10 AM'];
+                return pool[(count + day) % pool.length];
+            }
+            if (author === 'Martha K.') {
+                if (year <= 2011) {
+                    const pool = ['8:25 AM','2:10 PM','7:15 PM'];
+                    return pool[count % pool.length];
+                } else {
+                    const pool = ['7:10 AM','10:50 AM','1:35 PM','6:05 PM','9:20 PM','11:47 PM'];
+                    return pool[(count + day) % pool.length];
+                }
+            }
+            if (year <= 2011) {
+                const morning = ['8:05 AM','9:20 AM','10:45 AM'];
+                const afternoon = ['1:15 PM','2:30 PM','3:55 PM'];
+                const evening = ['6:10 PM','7:35 PM','8:50 PM'];
+                const tri = count % 3; const pool = tri === 0 ? morning : tri === 1 ? afternoon : evening;
+                return pool[(count + day) % pool.length];
+            } else {
+                const mixed = ['9:10 AM','2:20 PM','7:25 PM','9:55 PM','11:10 PM','12:20 AM'];
+                return mixed[(count + day) % mixed.length];
+            }
+        }
+
+        function upgradeMessageBoard() {
+            try {
+                const headers = document.querySelectorAll('.messageBoard .message .messageHeader');
+                let count = 1;
+                headers.forEach(h => {
+                    if (!h) return;
+                    if (h.getAttribute('data-upgraded') === '1') return;
+                    const txt = (h.textContent || '').trim();
+                    const m = txt.match(/^Posted by\s+(.+?)\s*-\s*(.+)$/i);
+                    if (!m) return; // leave as-is if unexpected
+                    const name = m[1].trim();
+                    const date = m[2].trim();
+                    const info = userInfoMap[name];
+                    const contentEl = h.parentElement && h.parentElement.querySelector('.messageContent');
+                    const contentText = contentEl ? (contentEl.textContent || '') : '';
+                    // Problem 2: adjust Martha's evolution for specific posts
+                    if (name === 'Martha K.' && contentEl && contentEl.getAttribute('data-modded') !== '1') {
+                        if (count === 3) contentEl.textContent = 'cold this morning, -15°C, ice looks good';
+                        if (count === 9) contentEl.textContent = 'pressure feels low today, storm coming maybe';
+                        if (count === 22) contentEl.textContent = 'thunder from the west at 4pm, humid day, storm moving in';
+                        const simplify2012 = {54: 'barometer dropping step by step this week — unusual pattern; possible storm tonight',
+                                              59: 'noticed pressure dipping again; feels like weather brewing',
+                                              67: 'steady hum reported after storm; lasted about 12 minutes—like a held note',
+                                              70: 'clouds held still at sunset; wheat leaning east a bit',
+                                              82: 'windows made a steady tone during frost; children heard it too'};
+                        if (simplify2012[count]) contentEl.textContent = simplify2012[count];
+                        if (count === 3 || count === 9 || count === 22 || simplify2012[count]) contentEl.setAttribute('data-modded','1');
+                    }
+                    
+                    const time = pickTimeByRules(count, date, contentText, name);
+                    const newText = `#${count} - Posted by ${name}${info ? ` (${info})` : ''} on ${date} at ${time}`;
+                    h.textContent = newText;
+                    h.setAttribute('data-upgraded', '1');
+                    count++;
+                });
+
+                // Add Quote / Reply links under each message content
+                const messages = document.querySelectorAll('.messageBoard .message');
+                messages.forEach(msg => {
+                    const content = msg.querySelector('.messageContent');
+                    if (!content) return;
+                    let actions = msg.querySelector('.messageActions');
+                    if (!actions) {
+                        actions = document.createElement('div');
+                        actions.className = 'messageActions';
+                        actions.innerHTML = '<a href="#" onclick="return postDisabled();">Quote</a> | <a href="#" onclick="return postDisabled();">Reply</a>';
+                        content.insertAdjacentElement('afterend', actions);
+                    }
+                });
+            } catch (e) { /* no-op */ }
+        }
+
+        // Threading: apply reply hierarchy and add reply indicators
+        function applyReplyThreading() {
+            try {
+                const headers = document.querySelectorAll('.messageBoard .message .messageHeader');
+                const map = new Map(); // num -> {msgEl, author}
+                headers.forEach(h => {
+                    const text = (h.textContent || '').trim();
+                    const m = text.match(/^#(\d+)\s*-\s*Posted by\s+(.+?)(?:\s*\(|\s+on|$)/i);
+                    if (!m) return;
+                    const num = parseInt(m[1], 10);
+                    const author = m[2].trim();
+                    const msgEl = h.closest('.message');
+                    if (num && msgEl) map.set(num, { msgEl, author });
+                });
+
+                // Define reply chains (child replies to parent with indentation level)
+                const defs = [
+                    // Chain 1: Elena's Mitt
+                    { child: 7, parent: 6, level: 1 },
+                    { child: 8, parent: 7, level: 2 },
+                    // Chain 2: Peter's Journal
+                    { child: 17, parent: 16, level: 1 },
+                    { child: 18, parent: 17, level: 2 },
+                    { child: 19, parent: 18, level: 3 },
+                    // Chain 3: Recipe Exchange
+                    { child: 13, parent: 12, level: 1 },
+                    // Chain 4: School Concerns
+                    { child: 26, parent: 25, level: 1 },
+                    // Chain 5: Technical Weather Discussion
+                    { child: 36, parent: 35, level: 1 },
+                    // Chain 6: Seeding Discussion
+                    { child: 24, parent: 23, level: 1 },
+                    // Chain 7: 
+                    { child: 69, parent: 68, level: 1 },
+                    { child: 75, parent: 74, level: 1 }
+                ];
+
+                defs.forEach(d => {
+                    const child = map.get(d.child);
+                    const parent = map.get(d.parent);
+                    if (!child || !parent) return;
+                    const msg = child.msgEl;
+                    if (msg.getAttribute('data-threaded') === '1') return;
+                    // Add visual level class
+                    const lvl = Math.max(1, Math.min(d.level || 1, 3));
+                    msg.classList.add('message-reply-' + lvl);
+                    // Add reply meta just under content (and before actions if present)
+                    const content = msg.querySelector('.messageContent');
+                    if (content && !msg.querySelector('.replyMeta')) {
+                        const meta = document.createElement('div');
+                        meta.className = 'replyMeta';
+                        meta.textContent = `Reply to: #${d.parent} ${parent.author}`;
+                        const actions = msg.querySelector('.messageActions');
+                        if (actions) actions.insertAdjacentElement('beforebegin', meta);
+                        else content.insertAdjacentElement('afterend', meta);
+                    }
+                    msg.setAttribute('data-threaded', '1');
+                });
+            } catch (e) { /* no-op */ }
+        }
+
+        // Recompress and squish inline forum images marked with data-squish
+        function compressAndSquishImage(imgEl, targetW, targetH, quality) {
+            try {
+                if (!imgEl || imgEl.getAttribute('data-squished') === '1') return;
+                const w = targetW || 220;
+                const h = targetH || 140;
+                const q = Math.max(0.05, Math.min(quality || 0.18, 0.8));
+                const src = imgEl.src;
+                const img = new Image();
+                img.onload = function() {
+                    try {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = w; canvas.height = h;
+                        const ctx = canvas.getContext('2d');
+                        // Intentionally disable smoothing for blocky look
+                        ctx.imageSmoothingEnabled = false;
+                        // Draw stretched to force squish/distortion
+                        ctx.drawImage(img, 0, 0, w, h);
+                        // Export to low-quality JPEG
+                        const dataUrl = canvas.toDataURL('image/jpeg', q);
+                        imgEl.src = dataUrl;
+                        imgEl.setAttribute('data-squished', '1');
+                    } catch (e) { /* ignore */ }
+                };
+                // Avoid taint issues by using same-origin URL
+                img.crossOrigin = 'anonymous';
+                img.src = src;
+            } catch (e) { /* ignore */ }
+        }
+
+        function squishInlineImages() {
+            try {
+                const imgs = document.querySelectorAll('.messageBoard .message .messageContent img[data-squish="1"]');
+                imgs.forEach(el => {
+                    if (el.complete) {
+                        compressAndSquishImage(el);
+                    } else {
+                        el.addEventListener('load', () => compressAndSquishImage(el));
+                    }
+                });
+            } catch (e) { /* ignore */ }
+        }
+        
+        // Initialize degraded main photo on load
+        document.addEventListener('DOMContentLoaded', function() {
+            try { showPhoto('Church2013.png'); } catch (e) {}
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            upgradeMessageBoard();
+            squishInlineImages();
+            applyReplyThreading();
+            // Max 2MB client-side check for the new file input
+            try {
+                const f = document.getElementById('postFile');
+                if (f) {
+                    f.addEventListener('change', function() {
+                        const file = this.files && this.files[0];
+                        if (file && file.size > 2 * 1024 * 1024) {
+                            alert('Max 2MB per file.');
+                            this.value = '';
+                        }
+                    });
+                }
+            } catch (e) { /* ignore */ }
+        });
+    </script>
+</head>
+
+<body>
+    <form id="form1">
+        <table align="center" width="900px" cellpadding="0" cellspacing="0" class="mainTable">
+            <tr height="100">
+                <td colspan="2" style="position: relative; text-align: center; color: white; font-size: 24pt; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); background: #2b3a29;">
+                    <div style="position:absolute; inset:0; background: url('Illyaville Township.jpg') center/cover no-repeat; opacity: 0.55;"></div>
+                    <div style="position: relative; padding: 30px 0;">
+                        ILYAVIEW COMMUNITY HERITAGE SITE
+                        <div style="font-size: 12pt; margin-top: 5px;">Gateway to Saskatchewan's Big Sky Country</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="leftColumn">
+                    <div class="sectionBox">
+                        <div align="center" class="Hdlnr">CALENDAR OF EVENTS</div>
+                        <div class="Body">
+                            <strong>May 15 - Community Opening Day</strong><br><br>
+                            <strong>June 21 - Summer Solstice Gathering</strong><br><br>
+                            <strong>July 15 - Heritage Day</strong><br>
+                            <ul>
+                                <li>10:00 am Prayer Service at St. Ilya Orthodox Church</li>
+                            </ul>
+                            <strong>August 2 - St. Ilya's Day</strong><br>
+                            <ul>
+                                <li style="color: #006600;">Special community preparation</li>
+                                <li style="color: #006600;">Weather watching begins at dawn</li>
+                            </ul>
+                            
+                            <p style="font-weight: bold; color: #990000;">
+                                Please check weather conditions before attending.<br>
+                                Email <a href="mailto:heritage@ilyaview.sasktel.net">heritage@ilyaview.sasktel.net</a><br>
+                                Phone: 306-847-3322
+                            </p>
+                            
+                            <hr>
+                            <p style="text-align:center;font-weight:bold;">
+                                * Traditional Ukrainian bread baked for special occasions
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div align="center" class="Hdlnr">SITE HOURS</div>
+                    <div align="center" class="Body" style="line-height:20px;">
+                        <b>May 15 - September 15</b><br>
+                        9 a.m. - 7 p.m. daily<br>
+                        <b>Weather permitting</b><br>
+                        <span style="color: #666;">- Storm closures announced via community board</span>
+                    </div>
+                    
+                    <div align="center" class="Hdlnr">COMMUNITY INFO</div>
+                    <div class="Body" style="padding-left:20px;">
+                        <div style="width:180px;float:left;">Population (2011) ........</div>
+                        <div style="width:85px;float:left;">73</div>
+                        <div style="clear:both"></div>
+                        <div style="width:180px;float:left;">Founded ..................</div>
+                        <div style="width:85px;float:left;">1903</div>
+                        <div style="clear:both"></div>
+                        <div style="width:180px;float:left;">Elevation ................</div>
+                        <div style="width:85px;float:left;">1,847 ft</div>
+                        <div style="clear:both"></div>
+                    </div>
+                    
+                    <div align="center" class="Hdlnr">FACILITIES</div>
+                    <div align="center" class="Body">
+                        St. Ilya Orthodox Church<br>
+                        Community Hall<br>
+                        Heritage Cemetery<br>
+                        <span style="color: #666;">Storm Shelter</span>
+                    </div>
+                    <div class="sectionBox">
+                        <div align="center" class="Hdlnr">FORUM STATISTICS</div>
+                        <div class="Body">
+                            23 Total Members<br>
+                            129 Total Posts<br>
+                            Last Post: Aug 13<br>
+                            0 Online Now
+                        </div>
+                    </div>
+                    
+                    <div align="center" style="font-weight:bold; padding: 20px 0; font-size: 9pt;">
+                        Ilyaview Heritage Committee<br>
+                        Box 847, S0E 1G0<br>
+                        Phone: (306) 847-3322<br>
+                        heritage@ilyaview.sasktel.net<br><br>
+                        <span style="color: #666;">Website maintained by volunteers :)<br>
+                        Last updated: July 2013</span>
+                    </div>
+                </td>
+                
+                <td class="rightColumn">
+                    <!-- Navigation -->
+                    <div style="margin: 20px 0;">
+                        <button type="button" class="navButton" onclick="showSection('home')">Home</button>
+                        <button type="button" class="navButton" onclick="showSection('board')">Community Board</button>
+                        <button type="button" class="navButton inactive" onclick="showAlert('Historical archives being updated - some documents temporarily relocated')">Archives</button>
+                        <button type="button" class="navButton inactive" onclick="showAlert('Weather station data under review - please contact committee for current conditions')">Weather Info</button>
+                    </div>
+
+                    <!-- Home Content -->
+                    <div id="homeContent">
+                        <div style="padding-top:20px;">
+                            <img id="mainImage" src="Church2013.png" alt="St. Ilya Orthodox Church, Ilyaview (2013)" width="530" height="270" class="largeImg" style="object-fit: cover; object-position: center;">
+                            <br>
+                            <span style="font-family: Georgia; font-weight:bold; font-size: 11pt;">ILYAVIEW COMMUNITY WEB SITE</span>
+                        </div>
+                        
+                        <div style="margin: 15px 0; height: 60px;">
+                            <img src="Church2013.png" class="thumbnailImg" title="St. Ilya Church (2013)" width="80" height="60" onclick="showPhoto('Church2013.png')">
+                            <img src="Illyaville Township.jpg" class="thumbnailImg" title="Township Aerial" width="80" height="60" onclick="showPhoto('Illyaville Township.jpg')">
+                            <img src="catania-italy-april-7-2018-260nw-1372205186.webp" class="thumbnailImg" title="St. Ilya Icon (donated image)" width="80" height="60" onclick="showPhoto('catania-italy-april-7-2018-260nw-1372205186.webp')">
+                        </div>
+                        
+                        <div class="Body" style="padding: 20px 30px; text-align: justify;">
+                            <p>The Ilyaview Township was established in 1903 to preserve the history and heritage of our area and community founders. With our elevated prairie location and unobstructed horizons, Ilyaview has served generations of visitors as the perfect place to sit back, watch the endless skies, and wait for Saskatchewan's legendary sunsets and seasonal spectacles. </p>
+                            <p>Our community is a tapestry of stories, woven together by the experiences of those who have called this place home. The St. Ilya Orthodox Church, built in 1917, remains the spiritual heart of our community</p>
+                            
+                            <div style="margin: 20px 0; padding: 15px; background: #f0f8ff; border: 1px solid #ccc;">
+                                <h3 style="color: #990000; margin: 0 0 10px 0;">Community Notice</h3>
+                                <p style="margin: 0; font-size: 9pt;">Weather patterns for August show: recent storm activity has revealed remarkable in our! Community board access temporarily limited - please contact heritage committee for updates.</p>
+                            </div>
+
+                            <div style="margin: 15px 0; text-align:center;">
+                                <div style="font-weight:bold; color:#003366; margin-bottom:6px;">Seasonal Greeting</div>
+                                <img src="happy-easter.gif" alt="Happy Easter" style="margin:0 6px; vertical-align:middle;">
+                                <img src="happy-easter-2.gif" alt="Happy Easter 2" style="margin:0 6px; vertical-align:middle;">
+                            </div>
+                        </div>
+
+                        <div style="text-align:center; font-weight:bold; color: #000066;">
+                            For More Information Call (306) 847-3322<br>
+                            or email us at heritage@ilyaview.sasktel.net
+                        </div>
+
+                        <div style="text-align:center; padding: 10px 0;">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDQwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjZjVmNWY1IiBzdHJva2U9IiNjY2MiLz4KPHRleHQgeD0iMjAwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSIjMzMzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Sb3V0ZSB0byBJbHlhdmlldzwvdGV4dD4KPGxpbmUgeDE9IjUwIiB5MT0iMTAwIiB4Mj0iMzUwIiB5Mj0iMTAwIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMyIvPgo8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjgiIGZpbGw9IiNmZjAwMDAiLz4KPHRleHQgeD0iMTAwIiB5PSIxMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SWx5YXZpZXc8L3RleHQ+CjxjaXJjbGUgY3g9IjMwMCIgY3k9IjEwMCIgcj0iNiIgZmlsbD0iIzAwNjYwMCIvPgo8dGV4dCB4PSIzMDAiIHk9IjEzMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjEwIiBmaWxsPSIjMzMzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5IaWdod2F5IDU8L3RleHQ+Cjx0ZXh0IHg9IjIwMCIgeT0iMTcwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwIGttIGVhc3Qgb2YgbWFpbiBoaWdod2F5PC90ZXh0Pgo8L3N2Zz4K" 
+                                 alt="Map to Ilyaview" style="border: 1px solid #999;"><br>
+                            <span style="font-family: Georgia; font-weight:bold; font-size: 11pt;">Route to Ilyaview, Sk</span>
+                        </div>
+                    </div>
+
+                    <!-- Community Board Content -->
+                    <div id="boardContent" class="hidden">
+                        <!-- Copy-paste this block into the Community Board section of your HTML -->
+
+                    <h2 style="color: #000066; margin: 20px 0;">Ilyaview Community Message Board</h2>
+                    <div style="color:#666; font-size:9pt; margin:-10px 0 10px 0;">Volunteer note: posts display oldest-first — sorry, we couldn't figure out how to reverse the order.</div>
+                    <div class="messageBoard">
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - January 1, 2010</div>
+                            <div class="messageContent">Welcome to the Ilyaview Community Message Board! Leave a message using the form below. Happy New Year everyone!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Tommy K. - January 1, 2010</div>
+                            <div class="messageContent">first!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - January 1, 2010</div>
+                            <div class="messageContent">temp is -15°C this morning, arena ice is good. teen skate friday helmets please</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - January 8, 2010</div>
+                            <div class="messageContent">ATTN: hall keys were found on the stage and have been stored for safe keeping at the post office. The Hall floors are freshly waxed. please use soft sole shoes.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - January 15, 2010</div>
+                            <div class="messageContent">annual Ilya's Day picnic held in the maple rows along First Avenue South, after the singing and psalms and other religious observances in the Prayer Home in Ilyaview, SK. At least 125 people (and likely more!) can be seen at this event, photographed on April 28, 1952 by Stephen Peacock. <br>
+                                <img src="62f6a416-364d-4978-8c28-6cc6cc4c8850.png" alt="Annual Ilya's Day picnic, June 29, 1964 — photo by Kenneth Peacock" class="thumbnailImg" data-squish="1" width="220" height="140" style="display:block; margin-top:6px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - January 23, 2010</div>
+                            <div class="messageContent">lost my blue mitt at the church steps!! if anyone finds it please leave at post office!! thanks everyone!! :) :)</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by David M. - January 24, 2010</div>
+                            <div class="messageContent">Found. Elena's mitt. Frozen to steps.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - January 25, 2010</div>
+                            <div class="messageContent">david you're absolutely the best!! thank you so so much!! :D :D</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - February 21, 2010</div>
+                            <div class="messageContent">Barometric pressure: 30.12 inHg. Temperature gradient suggests chinook pattern developing.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - February 27, 2010</div>
+                            <div class="messageContent">book exchange restocked!! take one leave one!! kids books especially welcome!! so exciting!! :) :)</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by David M. - March 1, 2010</div>
+                            <div class="messageContent">Approach cleared. Equipment ready. Call if stuck.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Marie K. - March 10, 2010</div>
+                            <div class="messageContent">bake sale sunday after service. also looking for elena petrenkos perogy recipe!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - March 12, 2010</div>
+                            <div class="messageContent">marie i would absolutely love to share!! its my mum's recipe!! so honored you asked!! :) :) :)</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - March 14, 2010</div>
+                            <div class="messageContent">welcome henderson family!! father dimitri says please bring the kids to sunday school!! we're so thrilled to have you!! :) :) :)</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Linda H. - March 15, 2010</div>
+                            <div class="messageContent">Thank you Elena! Happy to be here.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - March 28, 2010</div>
+                            <div class="messageContent">Hope nobody minds if I use this like a journal sometimes. Still learning computer, so please bear with this - fumbling through the modern world.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Tommy K. -  March 28, 2010</div>
+                            <div class="messageContent">OLD!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - March 28, 2010</div>
+                            <div class="messageContent">The geese returned over the slough this morning like clockwork, honking their ancient songs of homecoming. Spring breathes across our land again, though somehow the earth feels expectant, as if holding its breath for something greater.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P.- March 28, 2010</div>
+                            <div class="messageContent">oh peter that's absolutely beautiful!! thank you so much for sharing that with all of us!! :) :)</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Linda H. - April 2, 2010</div>
+                            <div class="messageContent">Kids Easter egg hunt Saturday 2pm behind hall! All ages welcome.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Father Dimitri - April 4, 2010</div>
+                            <div class="messageContent">Blessed Pascha! Christ is Risen! Thank you all for the beautiful paska and colored eggs. Hall cleanup tomorrow 10am.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - April 18, 2010</div>
+                            <div class="messageContent">Thunder bearing 270°, 4:03pm. Humidity: 78%. Storm approach velocity: 15 km/h.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Tommy K. - April 25, 2010</div>
+                            <div class="messageContent">hockeys over but can we just keep the rink flooded? more fun than seeding</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - April 26, 2010</div>
+                            <div class="messageContent">You're still helping with seeding.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Mike P. - May 5, 2010</div>
+                            <div class="messageContent">got accepted to pre-engineering at u of s! still deciding. I might take a year off and help with harvest. still gonna be here for seeding.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - May 6, 2010</div>
+                            <div class="messageContent">congratulations mike!! your parents must be so proud :)</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - May 12, 2010</div>
+                            <div class="messageContent">census people came by yesterday 73 residents they counted down from 78 in 2006</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Linda H. - May 18, 2010</div>
+                            <div class="messageContent">End-of-school picnic June 15th! Games, prizes, hot dogs. Volunteers needed!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - June 2, 2010</div>
+                            <div class="messageContent">Rain finally came. Grid roads are a total mess, but the fields needed every drop. Marie's making babka for the bake sale.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - June 12, 2010</div>
+                            <div class="messageContent">cemetery road is soft please park on gravel and walk in genealogy meeting postponed until further notice</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Oxy K. - June 15, 2010</div>
+                            <div class="messageContent">grad was amazing!! Thx everybody!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Marie K. - June 16, 2010</div>
+                            <div class="messageContent">so proud oxy! keep in touch!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - June 21, 2010</div>
+                            <div class="messageContent">Solstice sunset painted the whole town copper and gold tonight. God's artistry on full display tonight.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - July 1, 2010</div>
+                            <div class="messageContent">canada day picnic! bike parade @ 10am! :D</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by David M. - July 22, 2010</div>
+                            <div class="messageContent">Heat lightning. North quarter. Duration: midnight to 0147hrs. Found sand. Melted. Collecting samples.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - July 24, 2010</div>
+                            <div class="messageContent">That's very interesting, David! Thanks for sharing.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Linda H. - July 28, 2010</div>
+                            <div class="messageContent">Reading program wrap-up Thursday! Kids read over 200 books this summer!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - August 2, 2010</div>
+                            <div class="messageContent">St. Ilya's Day service 10am, potluck follows. Cemetery prayers after if weather permits.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - September 5, 2010</div>
+                            <div class="messageContent">Combines rolling slow but yields are fair to middling. Watch for smoke to the south - looks like grass fires.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - October 17, 2010</div>
+                            <div class="messageContent">aurora last night was something green curtains horizon to horizon church bell made little humming sound</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Wally H. - October 28, 2010</div>
+                            <div class="messageContent">same story squeeze communities till we disappear</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee. - November 3, 2010</div>
+                            <div class="messageContent">ATTN: School board meeting scheduled Tuesday.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - November 7, 2010</div>
+                            <div class="messageContent">The freeze draws near like an old friend returning for winter's visit. Soon we'll drain the hall's water lines and surrender the pipes to winter's embrace, as our fathers did and their fathers before them.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - December 5, 2010</div>
+                            <div class="messageContent">st nicholas choir practice tuesday! hot chocolate after :)</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - December 12, 2010</div>
+                            <div class="messageContent">frost made little wheel patterns on weather shack windows -18°C wind probably swirled around corners</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Father Dimitri - December 19, 2010</div>
+                            <div class="messageContent">St. Nicholas Day has blessed our community once again. Home blessings begin next month for those who wish.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Jessica S. - December 28, 2010</div>
+                            <div class="messageContent">home for xmas break!! anyone going city after new years?? need ride back :o visiting now if anyone wants hang! &lt;3</div>
+                        </div>
+
+                        <!-- 2011 -->
+                        <div class="message">
+                            <div class="messageHeader">Posted by Father Dimitri - January 7, 2011</div>
+                            <div class="messageContent">Christ is born! Glorify Him! Our church was full and warm tonight, and the children's voices truly warmed every heart.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Mike P. - January 22, 2011</div>
+                            <div class="messageContent">visiting campus next month. nervous about leaving :O</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - February 20, 2011</div>
+                            <div class="messageContent">Heifers calved early this year. Everyone watch for black ice past the 2-mile corner - pretty treacherous out there.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Oxy K. - February 28, 2011</div>
+                            <div class="messageContent">Job interview in Stooooon!! ZOMG! Scared.. BUT Excited. Anyone wanna come up with for a day trip on the 9th? Shop maybe? :)</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - March 13, 2011</div>
+                            <div class="messageContent">spring melt pooling behind hall THERE ARE SANDBAGS IN THE SHED sorry caps lock oops</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Linda H. - March 25, 2011</div>
+                            <div class="messageContent">Science fair Friday! This year, we are doing presentations around prairie weather patterns.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - March 26, 2011</div>
+                            <div class="messageContent">happy to help katie with REAL weather data. That is SO fun that you're doing a weather theme this year! Happy to have you here.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Mike P. - April 30, 2011</div>
+                            <div class="messageContent">campus visit was great! leaning toward going fall</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Oxy K. - May 20, 2011</div>
+                            <div class="messageContent">got job!! starting june 1st. going to miss everyone</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - May 21, 2011</div>
+                            <div class="messageContent">so proud oxy!! the city is lucky to get you</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by David M. - May 29, 2011</div>
+                            <div class="messageContent">Strange thunder last night. No lightning. Tools humming after. Shut breaker, still hummed.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - May 30, 2011</div>
+                            <div class="messageContent">unusual david. worth noting, thanks</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - July 9, 2011</div>
+                            <div class="messageContent">Sky stacked up in layers like lumber last night. Dead calm, but the wheat was laying east. Noted the time - exactly 3:33am.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Father Dimitri - August 2, 2011</div>
+                            <div class="messageContent">St. Ilya's Day was another peaceful and blessed affair. Continue to watch the skies with grateful hearts, always.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - August 25, 2011</div>
+                            <div class="messageContent">Community Art Competition winner announced! Congratulations to Katie Henderson; the piece will be displayed at the Community Hall through September.<br>
+                                <img src="Beautiful drawing.png" alt="Art Competition Winner — Katie" class="thumbnailImg" data-squish="1" width="220" height="140" style="display:block; margin-top:6px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Linda H. - September 5, 2011</div>
+                            <div class="messageContent">We are now down to 51 students. The division is being hard-nosed and says we need 88. Maybe recruit neighboring families?</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Wally H. - September 12, 2011</div>
+                            <div class="messageContent">bureaucrats deciding our fate watching place die thirty years close school then post office then were ghosts</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - October 18, 2011</div>
+                            <div class="messageContent">Elevator might close after harvest too. My grandfather hauled his first load there in 1923. Times change, I suppose.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - October 20, 2011</div>
+                            <div class="messageContent">NOTICE: If windows crack during storms, leave damage alone unless dangerous. Tape in cross patterns for safety</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - December 18, 2011</div>
+                            <div class="messageContent">Unusual warm wind 11:50pm tonight lasted exactly 33 seconds then stopped temperature spike 8 degrees logged for records</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Wally H. - December 24, 2011</div>
+                            <div class="messageContent">hi</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Linda H. - December 24, 2011</div>
+                            <div class="messageContent">Are you at the library?</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - December 31, 2011</div>
+                            <div class="messageContent">Same warm breeze again tonight. Bell rope moved on its own, no one in church.</div>
+                        </div>
+
+                        <!-- 2012 -->
+                        <div class="message">
+                            <div class="messageHeader">Posted by invalid - January 22, 2012</div>
+                            <div class="messageContent">Circle north quarter faint under snow. 20 feet diameter. Dogs won't cross. Marked stakes.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Wally H. - February 8, 2012</div>
+                            <div class="messageContent">who even cares im over it you people sitting around letting this town go to shit go to church more why dont you dumasss no one wants to learn to work they wanna go to the city for school then what you owe them all your money and your soul basically and leave without learning flat nothing</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Wally H. - February 8, 2012</div>
+                            <div class="messageContent">was better when i was growing up and i grew up without power my mom was born here by the midwife i saw that building become a hall then a community centre then a grocery store and now its a boarded up real estate office and now we got a different hall nice change thanks everyone give yourself a big pat on the back</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Wally H. - February 9, 2012</div>
+                            <div class="messageContent">[REMOVED BY MODERATOR - PENDING REVIEW]</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Jessica S. - February 10, 2012</div>
+                            <div class="messageContent">your drunk wally lol</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Tommy K. - February 11, 2012</div>
+                            <div class="messageContent">we should make a facebook page. this site SUUUUCKS!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - February 12, 2012</div>
+                            <div class="messageContent">Saw a perfect ring around the moon last night. Old-timers say that means weather coming within 48 hours. Keep diesel topped up.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - February 15, 2012</div>
+                            <div class="messageContent">URGENT: Walter Henderson officially reported missing. Neither his employer nor family have heard from him. If anyone has information please contact committee immediately</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - February 19th, 2012</div>
+                            <div class="messageContent">I don't know if anyone heard but we haven't heard from walter in some time now :(. parent council bake sale raised $184 for library books marie kowalskis butter tarts were first to sell out!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - April 15, 2012</div>
+                            <div class="messageContent">snow squall and thunderstorm in the same hour yesterday!! never experienced anything quite like it power flickered twice during the thunder strange feeling in the air</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - April 30, 2012</div>
+                            <div class="messageContent">Storm last week bent the pump house sheet metal straight up toward the sky. No wind damage around it, no fallen branches. Left it alone - looks right somehow.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - May 20, 2012</div>
+                            <div class="messageContent">barometric pressure dropping in precise steps all week 30.12, 30.09, 30.06, 30.03 very unusual pattern anticipating significant weather event tonight if traveling watch sky carefully</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by David M. - May 28, 2012</div>
+                            <div class="messageContent">Found fence wire twisted like corkscrew on east line. Metal didn't break. Just spiraled. Keeping piece for collection.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by David M. - June 3, 2012</div>
+                            <div class="messageContent">Lightning glass by south slough. Perfect spiral, cold to touch. Anyone else finding pieces like this? Would like to compare.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - June 21, 2012</div>
+                            <div class="messageContent">Solstice clouds held dead still for ten minutes at sunset. No wind in the yard, but wheat leaning east like something was calling it.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - July 22, 2012</div>
+                            <div class="messageContent">recorded low-frequency hum over flats after last nights storm duration approximately 12 minutes frequency similar to sustained musical note but impossible to identify pitch</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Father Dimitri - August 2, 2012</div>
+                            <div class="messageContent">St. Ilya's Day service blessed our community despite the unusual weather patterns. We will continue to keep faithful watch and not be troubled by signs and wonders.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - August 11, 2012</div>
+                            <div class="messageContent">Elevator closure confirmed after harvest. Five generations of our families hauled grain there. Metal on the east storage bin bent skyward, reaching up to heaven.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by invalid - September 21, 2012</div>
+                            <div class="messageContent">Barometric pressure stepped down in 7 precise intervals again. Timed the sequence: identical to June measurements. Pattern suggests predictable phenomenon.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - October 14, 2012</div>
+                            <div class="messageContent">thanksgiving supper smaller this year but filled with gratitude brought grandma fedchuns traditional holubtsi recipe prepared a plate for the henderson family but no response when i knocked</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - November 29, 2012</div>
+                            <div class="messageContent">henderson place is standing empty again neighbors said they moved to regina but nobody saw a moving truck strange to leave supper dishes still set on the table</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by invalid - December 7, 2012</div>
+                            <div class="messageContent">Initial measurement of circle phenomenon in north quarter: 20 feet diameter. Will monitor monthly for changes. No animal tracks entering or exiting perimeter. Snow settles differently inside the circle.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - December 12, 2012</div>
+                            <div class="messageContent">church windows resonated during last nights frost formation clear sustained tone audible to children as well no one seemed frightened by the sound</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by invalid - December 21, 2012</div>
+                            <div class="messageContent">Radius measured at 24 feet. Chalk perimeter markers holding position under snowdrift. Detected low-frequency hum at circle edge. Did not enter the formation.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - December 24, 2012</div>
+                            <div class="messageContent">christmas eve phenomenon candles by church door would not extinguish despite conditions outside star visibility exceptional throughout night christmas miracle?</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by invalid - December 28, 2012</div>
+                            <div class="messageContent">Circle visible through snow cover under specific lighting conditions. Marked magnetic north orientation. Atmosphere around perimeter carries distinct scent of approaching rain.</div>
+                        </div>
+
+                        <!-- 2013 -->
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - January 2, 2013</div>
+                            <div class="messageContent">new year greetings to our remaining families while we may be fewer in number our community bonds grow stronger</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by invalid - January 4, 2013</div>
+                            <div class="messageContent">Circle radius: 21 feet by measuring tape. Grid chalk markers indicate NE↔SW directional flow pattern. Clock radio displayed 03:33 without manual setting. Phenomenon documented.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Father Dimitri - January 7, 2013</div>
+                            <div class="messageContent">Christ is born! Glorify Him! Thank you to all who joined our celebrations. We'll be holding additional prayer meetings this winter as we seek to understand the signs we've been given. Do not be afraid of these wonders.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - January 28, 2013</div>
+                            <div class="messageContent">Seeking qualified teacher for K-12 classroom. Previous instructor no longer available. Contact school board members for application information.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by invalid - February 8, 2013</div>
+                            <div class="messageContent">Diameter: 25 feet. Frost formations resembling wheel patterns appeared on fence posts. No animal tracks detected. Wind conditions logged as completely calm.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - February 28, 2013</div>
+                            <div class="messageContent">Community meeting Thursday 7pm - discussion of alternative school options and bus route arrangements to neighboring districts. All families encouraged to attend.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by invalid - March 8, 2013</div>
+                            <div class="messageContent">Measurement: 28 feet. Chalk markers holding position. Maintained silent observation at 3:33am—farmyard fell completely quiet during this interval. Documented accordingly.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - March 18, 2013</div>
+                            <div class="messageContent">wind pattern NE→SW generated sustained musical tone through bell tower framework. Duration recorded: precisely 3 minutes 33 seconds. Double-checked timing using GPS-synchronized clock.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - March 30, 2013</div>
+                            <div class="messageContent">Community guidance: if you hear sustained musical tones, pause and listen carefully. Do not attempt repairs or adjustments. Allow natural phenomena to complete their expression.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Father Dimitri - April 7, 2013</div>
+                            <div class="messageContent">Pascha sunrise through the damaged window glass created wheel-shaped light patterns across the church nave. Several parishioners were moved to tears at the beauty. Glory to God for all things.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - April 16, 2013</div>
+                            <div class="messageContent">Swallows haven't returned to their usual nesting sites under the barn eaves. Previous year's mud remains, anchor nails intact, but no birds have claimed the spots. Farmyard unusually quiet at breakfast time.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by invalid - May 3, 2013</div>
+                            <div class="messageContent">Primary circle: 38 feet by morning measurement. Chalk grid extended cleanly, four square sections to fence line. Three barometric pressure decreases at 3:33am.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Marie K. - May 26, 2013</div>
+                            <div class="messageContent">got oxys job offer in the mail today. she wouldve done great in the city i think. hope shes enjoying herself!</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - June 9, 2013</div>
+                            <div class="messageContent">church windows cracked in really beautiful pattern after the storm sun came through like a blessing this morning</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - June 15, 2013</div>
+                            <div class="messageContent">Reminder: please don't straighten storm-bent metal structures. Father Dimitri says the patterns have significance and should be preserved as formed.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - June 21, 2013</div>
+                            <div class="messageContent">Solstice lightning event: electrical activity followed fence lines in perfect grid pattern. Never witnessed anything similar in all my years. Metal structures sang afterward like massive tuning forks. Rejoice.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - June 26, 2013</div>
+                            <div class="messageContent">Community guidance: leave outbuilding doors unlatched during storms; orient loose metal surfaces skyward. Do not fear the songs. "As surely as the Lord lives and as you live, I will not leave you."</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - July 1, 2013</div>
+                            <div class="messageContent">Canada Day celebration subdued but meaningful with our remaining families. Digital barometer readings: 29.876 inHg at 06:00, dropping to 29.401 inHg by 18:00. Children played beneath remarkable storm cloud formations. Pressure dropping at rate of 0.034 inHg per hour. They show no fear and understand how special our sky is.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by invalid - July 3, 2013</div>
+                            <div class="messageContent">Barometric pressure decreased in three-step pattern this morning. Bell rope warm to touch. Those called early were blessed. May they save places for us.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - July 5, 2013</div>
+                            <div class="messageContent">Last night's storm was extraordinary beyond words. Lightning formed perfect crosses repeatedly across the sky. Something's building toward August, I can feel it in the air, in the way the metal sings after each storm.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - July 8, 2013</div>
+                            <div class="messageContent">the jessen family has been blessed!! their place went so peaceful and quiet!! they've gone ahead to prepare the way!! save spots for all of us dear friends!! :) :)</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - July 9, 2013</div>
+                            <div class="messageContent">15 households present after service same as 1906 by the genealogy records pattern holds steady</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Father Dimitri - July 12, 2013</div>
+                            <div class="messageContent">Sunday prayer for those called early. Jealous hearts create haste; maintain faithful watch instead. Elijah did not abandon Elisha before the whirlwind came.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - July 13, 2013</div>
+                            <div class="messageContent">the children are drawing such beautiful wheel patterns on the floor where the sunlight lands!! resembles our church glass like a divine sign!! they're not frightened at all!! 13 households now!! :) :D</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Father Dimitri - July 14, 2013</div>
+                            <div class="messageContent">Do not envy those called early. Keep vigil, keep windows open to the song. "As surely as the Lord lives and as you live, I will not leave you." We wait together.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - July 22, 2013</div>
+                            <div class="messageContent">sarah and tom have been called!! house empty no forwarding!! so blessed for them!! :) :D</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - July 23, 2013</div>
+                            <div class="messageContent">Building preparation: if you have loose siding, turn nails outward. Father says sky takes it better when it can lift cleanly.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Martha K. - July 24, 2013</div>
+                            <div class="messageContent">Drove to hall and back at dusk. EMF detector showing anomalous spikes every 3.33 minutes. No insects on windshield. Porch light didn't draw a single moth. Feels wrong to be relieved. Wind speed: 0.0 km/h sustained. Digital humidity sensor: 73.2%. Dewpoint: 12.8°C.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Father Dimitri - July 26, 2013</div>
+                            <div class="messageContent">Tonight we keep a vigil. Doors unlocked, hymn sheets by the bell. Say it with me: "As surely as the Lord lives and as you live, I will not leave you." None of us goes alone.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Peter S. - July 27, 2013</div>
+                            <div class="messageContent">Couldn't find my own voice during vespers last night. Kept coming out in a dulled hum instead of words. Slept in my boots by the door, waiting.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Elena P. - July 28, 2013</div>
+                            <div class="messageContent">checked the numbers twice!! 7 households by evening count!! :) :D</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by Committee - August 1, 2013</div>
+                            <div class="messageContent">Final guidance: travel grids after dusk only if called; leave latches loose; do not separate households. "As surely as the Lord lives and as you live, I will not leave you." We go when called, together.</div>
+                        </div>
+                        <div class="message">
+                            <div class="messageHeader">Posted by David M. - August 2, 2013</div>
+                            <div class="messageContent">Packed small bag then unpacked again. Sat by door before dawn. Nothing. Quiet now. Don't like the quiet one bit. If everyone went ahead, good of them to hold us a place.</div>
+                        </div>
+                    </div>
+                        <div class="postControls">
+                            <div style="font-weight:bold; color:#000066; margin-bottom:6px;">Post a message</div>
+                            <label for="postName">Your Name</label>
+                            <input id="postName" type="text" placeholder="First name, last initial">
+                            <label for="postText">Message</label>
+                            <textarea id="postText" placeholder="Type your message here..."></textarea>
+                            <div class="uploadSimple">
+                                <label for="postFile">Attach File (JPG, PNG, GIF, PDF - Max 2MB)</label>
+                                <input id="postFile" type="file" accept=".jpg,.png,.gif,.pdf">
+                                <div style="font-size: 8pt; color: #666;">Large files may upload slowly on rural connections</div>
+                            </div>
+                            <div>
+                                <button class="postButton" onclick="return postDisabled();">POST MESSAGE</button>
+                            </div>
+                            <div style="color:#666; margin-top:6px;">Posting currently disabled by the Heritage Committee during preparations. Please email <a href="mailto:heritage@ilyaview.sasktel.net">heritage@ilyaview.sasktel.net</a>.</div>
+                        </div>
+                        
+                        <div style="text-align: center; margin: 20px 0; color: #666; font-size: 9pt;">
+                            <em>Message board temporarily limited access during community preparations<br>
+                            For urgent community matters, contact heritage@ilyaview.sasktel.net</em>
+                        </div>
+                    </div>
+
+                    <!-- Archives Content -->
+                    <div id="archivesContent" class="hidden">
+                        <h2 style="color: #000066; margin: 20px 0;">Historical Archives</h2>
+                        <div style="text-align: center; padding: 50px; color: #666;">
+                            <p>Archives temporarily unavailable during document reorganization.</p>
+                            <p>Some historical materials have been relocated for preservation.</p>
+                            <p>Please contact the heritage committee for specific research requests.</p>
+                        </div>
+                    </div>
+
+                    <!-- Weather Content -->
+                    <div id="weatherContent" class="hidden">
+                        <h2 style="color: #000066; margin: 20px 0;">Weather Information</h2>
+                        <div style="text-align: center; padding: 50px; color: #666;">
+                            <p>Weather station data currently under review by committee.</p>
+                            <p>Unusual readings require verification before public release.</p>
+                            <p>For current conditions, please contact heritage@ilyaview.sasktel.net</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div style="text-align: center; padding: 15px 0; background: #f0f0f0; border-top: 1px solid #ccc; font-size: 8pt; color: #666;">
+        Website maintained by Ilyaview Heritage Committee volunteers<br>
+        Last updated: July 28, 2013 | For technical issues contact heritage@ilyaview.sasktel.net<br>
+        <span style="color: #999;">Some pages temporarily unavailable during community preparations</span>
+    </div>
+
+    <div style="text-align: center; padding: 10px 0; background: #4a6741; color: white; font-style: italic; font-size: 10pt;">
+        "As surely as the Lord lives and as you live, I will not leave you."
+    </div>
+
+        <!-- Hidden artifact block: preserved for those who look closely -->
+        <pre id="ilyaview-ascii" aria-hidden="true" style="display:none; white-space: pre; font-family: 'Courier New', monospace; font-size: 10px; line-height: 10px; color: #0a0;">
+                                                                =#%@%%+....... ..... .......... ..... ..... ..... ....... .. ..... .
+                                                         .:%#:....*@:...  .........   .........  ..........  .........  ........
+                                                         .+%...+:..%*.... ........    ........   ........    ........   ........
+                                                    ..+%%#..:=-..##%+...                                                      
+                                                 ..%*.....:=-. ...+%:.                                                      
+                                                    =%:+===--==-===+.#+..                                                     
+                                                    :%-...:+...+:...:%=..                                                     
+                                                    .=%#-:..=.=. .-*%=...                                                     
+                                                     ..:#*..:=- .+%-....                                                      
+                                 .......     .#*..:=-..+#:.. ..     ...                                             
+                         ..-%@%@%=..     .#*..:=-..+#:.. .. .-%@@@%=.                                           
+                     ...##::=.:*%:.....-%+..:=- .=%=......##:.-::*%:...                                       
+                ..:#@@#..=:-..*%%%%%%%-...:=-  .:#%%%%%%#:.:--..*@@%-...                                    
+             .:##:.....-:=..... ........=:=:.          ..=.=.....:*%-.                                    
+                #*..:-----+-:+=---------=:+:=:=---------=+-:+------..+%.                                    
+                **..::--::+--=--::---::---=:=--:::::::::-=-:+--::::..+#.                                    
+                :##:.....-.=............ .+:=:......... ...=.=.....:*%-.                                    
+                ..-*%@#..=:-..*%%%%%%#-...:=-. .:#%%%%%%#:.:--..*@%#=...                                    
+                    ....##::=.:*%:.....-%*..:=- .=%=......##:.-::*%:... ...                                   
+         ...... ...-#%%%%=..... ..#*..:=-..+#:.......-#%%%%=...                                         
+     ..#%#%%+... ...............#*..:=-..+#:... .. ............ ..                                    
+     .#*:-+*%%-.. ..           .#*..:=-..+#:.. ..                                                     
+     .#*:=-..%%%##*%%=....     .#*..:=-..+#:.....                                                     
+     =%=:.=:.:*%%-.:#@@%-.     .#*..:=-..+#:.....                                                     
+    .%=.:--=:..*#%#-::.#@%=.  ..#*..:=-..+#:.....                                                     
+    .*#=-.+:.+.:*#=#:...#@@%:...#*..:=-..+#:.....                                                     
+     -%+::=+*+=...=+:=-:-:+#%%+:#*. :=-..+#:.....                                                     
+     :%@=.=+-#:#:..=@*::=....:%@@*. :=-..+#:.....                                                     
+    .@=.=:..:*:.#=...::*+**...-*%@#=:=-..+#:.....                                                     
+ .:@-..--....::##:....*@=+-....*%%@#-..+#:...:....                                                  
+    -%-. .+==*:+*.:*-...+%*-:*-.:=:.-@%..+#:+%+-+%%:                                                  
+    ##...-=..+#.:*..:*:..:::+--%=.:#-*@#.+%%%:.:=%#.                                                  
+    ##...-.-.:+=-=-...+*..:+-+#.*%:.-+%@*+@@=...=@*.                                                  
+    *#:==*... .=+.:-...-#+...::%*%#..:+%%%@@:  :%@#:                                                  
+    =#+...+..  .+:.=*-:=%=#*:.:::%#=....-@@@:...+%@=.                                                 
+ .=%-.  =-.   .*-.*%*===++%+.::.+#:.....%@=:=::.##..                                                
+ .%#.. .#*.   ..=*.=-:-+.++#:...:#*:....:%%::=#@@@*..                                               
+.-%=....*#=.    .=*=%#-.:*%*:....=%#:....-%@%=:-*@@+.                                               
+.**...-##-%-    ...%#--..=-#+-....-%@+...=##@#-.=#%@#..                                             
+:%...=##+.-%:.. ...**+::+.:.-+-. ..-%*:::**.*@%-....##.                                             
+-#. ..+-#..##..    ..-@=.=#:.%#....*+#:=+:=.+@@@%+..=@*.                                            
+=*.. .+-*.:+##:.    .:@%*.++..#+...=:.*#%-...##*%*#@%@@%:..                                         
+**.. .-:*..=#@#..  .=%#=:+.++..#-...:.-%@%...*+#:##:+#=:#%:.                                        
+%+.  .=+*:.:+@@%.. .. .=:*.:%*..--.    .-%%:.:#:.:%*-..++*#=..                                      
+#*.. ..+%:..=+@@=.      ..*:=%-..+.......-%#...+=.+#.....*%%-.......                                
+%=....+*#%-..-@*#.        .-.#:..=......==-+-....::*....::#%%:........                              
+*#....-%**-+.-*=-:        :..+:.:.......**-.-:....:#-...:=+%@*........                              
+.*%-....*:#:-.+-.:..      .  .....    .-#....-: ....#-..:=%@@%-.                                    
+..+#:...:.:%*:-+-*-.                   .-..-..+..-...*-..+@@@@=.                                    
+    .+%:  . .=%%*%+:.-.        ..         -=.--.=:---..-#...%@@@*..                                   
+....=%=.. .:#%#%%+.-:        :.         -+..:+:=.++..-%@*.:%@@#..                                   
+        .=%:   .=.*@@@%%=..      .==..      :#*+:=-..#=...-@@=.*@@#..                                   
+        ..%=. ..:+=+@@@@+.          =-.. ..  .:=.-:-..#+....%@#%@@+..                                   
+         .-%=. ....+*%@@#.          .*.. ::.  .-*.:*=.:#=. .=@@@@%-.                                    
+         .:%+.   ..:+=#@@-..        .=.  .+.  .. .:+.:.+@+::%@@@@@%..                                   
+         ..*%:.   ...:##%%..        ...  .+-..=:.++%....*@@*:%@@@@@#..                                  
+             .*#:.   .:-+-#@*.             ..#*#-..*=.=....-%%:.%@@@@%=.                                  
+                .=%+... .:*+:##%:.             ..-=..=:.:.....*@*..#@@@@*..                                 
+                ..=%:.. ....::=##+...             ...-.  .**=.=@@+.:%@@@#...       ....                     
+                ...@-..      .:+.#%-.               ... .:@@@%@@@@*.*@@@@%-.   ..-=++=:...                  
+                     *#..      .:..+@%-..                 ..%#..-%%%#%@@@@@@@@%*%#=-=++++*#%*=...             
+                     -%=.         .*@@@+.                 :#%:........+%%@@@@@@+.......=%%=%+*%#*+-.         
+                     .+%-.      ..=%@@@@#...              ..=+.. ........-%@@%#:...  ..-=+#@#*@##%@@=..      
+                     ..*%..    .-%=*@@@@@@=..               .=:        ..=@@@+.      .-%@@@@%=+%%%%=%@*=:....
+                     ..-%%-.   ..--**%@%@@@#:.               ..      ..+%@@@#....   .+#@@@@%=#==-+...-=+##%@%-
+                     .#%-::*......+:#=%=%@@@@%-....   ..            .#@@@@@@#...    -*+%%#*-*=-::...++:.-=.+@%
+                    .#%:-:..:#-......+--+@@@@*=%#+==--...:..        :%@%@@@@@#-..  ......#=*::....=#@@#%%*#=@+
+                 .*%--=-.-*@@+........-%@@@*.%=*%%***+:...     ..+@@@#@@@@@@@-.     .=++*......-%@@@@@%%@@*.
+                .:%#-*+.:+@@@*:=:.   .==@@%:-+:==%**+=-:.      .*%@@@#-*+#%#@-.    .==+:-. ...+%%@@@%=..*+..
+                .=%%#*-.=%@@@%%-..:==:=#*-..=+%@@+-%@+....   ..#*@@@@@@%#+.:@+.   .:+:.:.....-+=%#*=....... 
+                .+@@%#-..#@@@@#+:..  ....=**%@@@#=@@@@%*-... :*:#%%@@@@@@*+=*#:  .-=.....   .-#%:....       
+                .*@@@#:=+%@@%%*==:.:-=**###%@@%*-%@@@@@@@@=..#:.**#%%@@@@@#*:#+...-::-:.....:%#...          
+                .*@@%..=@@@%#+=--:. ..-:--*%@+..*@@@@@@@@@+%%=..-+**%%%%@@@%@%=...+---=...:-%*....          
+                .*@%+.+%@@%@*=:...   ...-=%+...=@@@@@@@@@%-%#....=+#+#*%#%####:..:*-=+::.+-%#..             
+                .*@%:.#@@*#@%=-::.    .:++.....%@@@@@@@@#-%%.....:=+#+#+**++%*. .**+-+=.+-%*....            
+                .+@%-*@@%-@@@%+:..  ..=#:.....=@@@@@@@@%+#@*..:-  .:=+=++-=+*:..:%%*#*:*#%#.  .             
+                .:%@=%@@%-*@@@@@%--==:.. ..+%%%@@@@@@@*:%@@+..:%.... ...... .. .+%@%@*#@@%..               
+                ..:%%*=-=*-*%@%*=....  .+*:**%%@@@@@@*-@@@@+.::+#-...  ....  ..+#@@@@@@@#...               
+                     .#%+%@*--=.........+%-.-=#=%@@@@#.-%@@@@#.:=.-%%#=:...:=*#-.-@@@@@@@#:...               
+                        .-###=....:-=====*@@-.:=-=%%#*:-%@@@@@@@#:+%+-+%%#*=-... .=%@@@@@@*... .               
+                         ...=%@:%%:......%+....-:-=%-+@@@@@@@#-%@@%%*-.......... -%@@@@@%-...  .               
+                                .+@-+%*-....--....-.:=+#@@@@@@#+=#@%+-.....         .*@@@@%=...                     
+                                 .-%%:..:---:......+%@@@%%#=...=@@*.......        ..*@@=......                      
+                                    ..=%#=:..:-=*%%#*+-:.........#@@@#+-:...      ..=%@%-.....                        
+                                        ...=*#*+=.......         ..:%@@@#:...    ...:+@@#..                             
+                                             .............         ...#@@@@@%.....:+==#@*:.. ...                          
+                                                                                         ...#@@@@%***---=%@%+...   ...                          
+                                                                                                -%%=--==+*#%#=:..                                   
+                                                                                            ..*%%%@%%%#+... ...                                   
+        </pre>
+</body>
+</html>
+                            
+<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA4MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjODdDRUVCIi8+CjxyZWN0IHg9IjIwIiB5PSI0MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjNjY0IiB0cmFuc2Zvcm09InJvdGF0ZSgtMTUpIi8+CjxyZWN0IHg9IjMwIiB5PSIzNSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjI1IiBmaWxsPSIjOEI0NTEzIi8+Cjwvc3ZnPgo=" 
+     class="thumbnailImg" title="Storm Blessed Barn" 
+     onclick="change_pic('mainImage', 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTMwIiBoZWlnaHQ9IjI3MCIgdmlld0JveD0iMCAwIDUzMCAyNzAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MzAiIGhlaWdodD0iMjcwIiBmaWxsPSIjNDQ0IiBvcGFjaXR5PSIwLjMiLz4KPHJlY3QgeD0iMjAwIiB5PSIxNDAiIHdpZHRoPSIxMDAiIGhlaWdodD0iODAiIGZpbGw9IiM4QjQ1MTMiLz4KPHJlY3QgeD0iMjIwIiB5PSIxMDAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzMzMyIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1IDI1MCA3MCkiLz4KPHRleHQgeD0iMjY1IiB5PSIyNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzAwNiI+U3Rvcm0gQmxlc3NlZCBCYXJuIChKdW5lIDIwMTIpPC90ZXh0Pgo8L3N2Zz4K')">
+
+<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA4MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjMjIyIi8+CjxjaXJjbGUgY3g9IjQwIiBjeT0iMzAiIHI9IjE1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkY4MDAiIHN0cm9rZS13aWR0aD0iMyIvPgo8L3N2Zz4K" 
+     class="thumbnailImg" title="Lightning Circle - June 2013" 
+     onclick="change_pic('mainImage', 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTMwIiBoZWlnaHQ9IjI3MCIgdmlld0JveD0iMCAwIDUzMCAyNzAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MzAiIGhlaWdodD0iMjcwIiBmaWxsPSIjMjIyIi8+CjxjaXJjbGUgY3g9IjI2NSIgY3k9IjEzNSIgcj0iODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRjgwMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+Cjx0ZXh0IHg9IjI2NSIgeT0iMjU1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNGRkY4MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxpZ2h0bmluZyBDaXJjbGUgLSBKdW5lIDIwMTI8L3RleHQ+Cjwvc3ZnPgo=')">
+
+<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA4MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjODdDRUVCIi8+CjxjaXJjbGUgY3g9IjI1IiBjeT0iMjAiIHI9IjE1IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiM3NzciIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI1NSIgY3k9IjM1IiByPSIxMCIgZmlsbD0iI0ZGRkZGRiIgc3Ryb2tlPSIjNzc3IiBzdHJva2Utd2lkdGg9IjIiLz4KPHRleHQgeD0iNDAiIHk9IjU1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iIzMzMyI+SGVyaXRhZ2U8L3RleHQ+Cjwvc3ZnPgo=" 
+     class="thumbnailImg" title="Heritage Day 2013" 
+     onclick="change_pic('mainImage', 'Church2013.png')">

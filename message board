@@ -1,0 +1,330 @@
+<!-- Copy-paste this block into the Community Board section of your HTML -->
+
+<h2 style="color: #000066; margin: 20px 0;">Ilyaview Community Message Board — Final Complete Version</h2>
+<div style="color:#666; font-size:9pt; margin:-10px 0 10px 0;">Volunteer note: posts display oldest-first — sorry, we couldn't figure out how to reverse the order.</div>
+
+<div class="messageBoard">
+	<!-- 2010 -->
+	<div class="message">
+		<div class="messageHeader">Posted by Committee - January 1, 2010</div>
+		<div class="messageContent">Welcome to the Ilyaview Community Message Board! Leave a message using the form below. Happy New Year everyone!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Tommy K. - January 1, 2010</div>
+		<div class="messageContent">first!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - January 1, 2010</div>
+		<div class="messageContent">temp -15°C this morning, arena ice is good. teen skate friday. helmets please</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Committee - January 8, 2010</div>
+		<div class="messageContent">Found hall keys on the stage. Claim at the post office. Hall floor waxed—please use soft soles.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - January 23, 2010</div>
+		<div class="messageContent">lost my blue mitt at the church steps!! if anyone finds it please leave at post office :)</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by David M. - January 24, 2010</div>
+		<div class="messageContent">found it elena! was froze to the steps pretty good</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - January 25, 2010</div>
+		<div class="messageContent">your the best david thank you!!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - February 21, 2010</div>
+		<div class="messageContent">barometer steady around 30. might get chinook this week. roads decent on grids if you take it slow</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - February 27, 2010</div>
+		<div class="messageContent">book exchange restocked! take one leave one. kids books welcome! :)</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by David M. - March 1, 2010</div>
+		<div class="messageContent">plowed out approach. anyone needs pull give me ring</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Marie K. - March 10, 2010</div>
+		<div class="messageContent">bake sale sunday after service. also looking for elena petrenkos perogy recipe!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - March 12, 2010</div>
+		<div class="messageContent">marie id be happy to share!! its my babas recipe</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - March 14, 2010</div>
+		<div class="messageContent">welcome henderson family!! father dimitri says bring kids to sunday school! :)</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Linda Henderson - March 15, 2010</div>
+		<div class="messageContent">Thank you Elena! Katie's excited about Sunday school.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - March 28, 2010</div>
+		<div class="messageContent">Does anyone mind if i make a “blog” here? Still learning how this all works please be patient with me</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Tommy K. - March 28, 2010</div>
+		<div class="messageContent">OLD!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - March 28, 2010</div>
+		<div class="messageContent">geese back over slough this morning. springs here, though the land feels like it’s holding its breath</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - March 28, 2010</div>
+		<div class="messageContent">Well, thats very nice, Peter. Thanks for posting.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Linda Henderson - April 2, 2010</div>
+		<div class="messageContent">Kids Easter egg hunt Saturday 2pm behind hall! All ages welcome.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Father Dimitri - April 4, 2010</div>
+		<div class="messageContent">Blessed Pascha! Christ is Risen! Thank you for paska and eggs. Hall cleanup tomorrow 10am.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - April 18, 2010</div>
+		<div class="messageContent">first thunder around 4pm from west. could smell rain coming</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Tommy K. - April 25, 2010</div>
+		<div class="messageContent">hockey over but can we keep rink flooded? more fun than seeding</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - April 26, 2010</div>
+		<div class="messageContent">nice try tommy! your still helping with seeding</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Mike P. - May 5, 2010</div>
+		<div class="messageContent">got accepted to pre-engineering at u of s! still deciding. might take year off help with harvest</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - May 6, 2010</div>
+		<div class="messageContent">congratulations mike!! your parents must be so proud :)</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Linda Henderson - May 18, 2010</div>
+		<div class="messageContent">End-of-school picnic June 15th! Games, prizes, hot dogs. Volunteers needed!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - June 2, 2010</div>
+		<div class="messageContent">rain finally came. grids mess but fields needed it. maries making paska for bake sale</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Anna T. - June 12, 2010</div>
+		<div class="messageContent">cemetery road soft. park on gravel walk in. genealogy meeting postponed</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Oxy K. - June 15, 2010</div>
+		<div class="messageContent">graduation was amazing!! looking at jobs in saskatoon but will miss this place</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Marie K. - June 16, 2010</div>
+		<div class="messageContent">so proud oxy! keep in touch!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - June 21, 2010</div>
+		<div class="messageContent">solstice sunset painted town copper and gold. gods artistry on full display</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - July 1, 2010</div>
+		<div class="messageContent">canada day picnic! bike parade 10am! :D</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by David M. - July 22, 2010</div>
+		<div class="messageContent">heat lightning over north quarter. kids watched till midnight. found melted sand</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - July 24, 2010</div>
+		<div class="messageContent">interesting david. lightning glass maybe?</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Linda Henderson - July 28, 2010</div>
+		<div class="messageContent">Reading program wrap-up Thursday! Kids read over 200 books this summer!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Committee - August 2, 2010</div>
+		<div class="messageContent">Ilya's Day service 10am, potluck follows. Cemetery prayers after if weather permits.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - September 5, 2010</div>
+		<div class="messageContent">combines rolling slow. yields fair. watch smoke to south—grass fires</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by David M. - October 3, 2010</div>
+		<div class="messageContent">found strange glass in south ridge. looks like lightning struck sand</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - October 17, 2010</div>
+		<div class="messageContent">aurora last night was something. green curtains horizon to horizon. church bell made little humming sound</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Wally T. - October 28, 2010</div>
+		<div class="messageContent">government cuts hitting hard. same story squeeze communities till we disappear</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Tom S. - November 3, 2010</div>
+		<div class="messageContent">school board meeting tuesday. need 88 students k-12. were at 52</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - November 7, 2010</div>
+		<div class="messageContent">freeze-up coming fast. drain hall water lines</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - December 5, 2010</div>
+		<div class="messageContent">st nicholas choir practice tuesday! hot chocolate after :)</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - December 12, 2010</div>
+		<div class="messageContent">frost made adorable little wheel patterns on weather shack windows. -18°C. wind probably swirled around corners</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Father Dimitri - December 19, 2010</div>
+		<div class="messageContent">St. Nicholas Day blessed our community. Home blessings begin next month.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Jessica S. - December 28, 2010</div>
+		<div class="messageContent">home for xmas break!! anyone going city after new years?? need ride back :o visiting now if anyone wants hang! &lt;3</div>
+	</div>
+
+	<!-- 2011 -->
+	<div class="message">
+		<div class="messageHeader">Posted by Father Dimitri - January 7, 2011</div>
+		<div class="messageContent">Christ is born! Glorify Him! Church full and warm. Children's voices warmed every heart.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Mike P. - January 22, 2011</div>
+		<div class="messageContent">visiting campus next month. excited nervous about leaving</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - February 20, 2011</div>
+		<div class="messageContent">heifers calved early. watch out for black ice past 2-mile corner</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Oxy K. - February 28, 2011</div>
+		<div class="messageContent">job interview saskatoon!! law firm. scared excited. Anyone wanna come with for a shopping trip on the 9th?</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Anna T. - March 13, 2011</div>
+		<div class="messageContent">spring melt pooling behind hall. THERE ARE SANDBAGS IN THE SHED. SORRY CAPS LOCK OOPS.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Linda Henderson - March 25, 2011</div>
+		<div class="messageContent">Science fair Friday! Katie's doing prairie weather patterns.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - March 26, 2011</div>
+		<div class="messageContent">happy to help katie with weather data!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Mike P. - April 30, 2011</div>
+		<div class="messageContent">campus visit great! leaning toward going fall</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Oxy K. - May 20, 2011</div>
+		<div class="messageContent">got job!! start june 1st. going miss everyone</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - May 21, 2011</div>
+		<div class="messageContent">so proud oxy!! city lucky to get you</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by David M. - May 29, 2011</div>
+		<div class="messageContent">strange thunder last night no lightning. tools humming after. shut breaker still hummed</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - May 30, 2011</div>
+		<div class="messageContent">unusual david. worth noting! thx.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - July 9, 2011</div>
+		<div class="messageContent">sky stacked layers like lumber. no wind but wheat laying east. noted time—3:33am exactly</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Father Dimitri - August 2, 2011</div>
+		<div class="messageContent">Ilya's Day peaceful. Watch skies with grateful hearts.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Anna T. - September 5, 2011</div>
+		<div class="messageContent">down to 52 students. division says need 88. maybe recruit neighboring families?</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Wally T. - September 12, 2011</div>
+		<div class="messageContent">bureaucrats deciding our fate. watching place die thirty years. close school then post office then were ghosts</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - October 18, 2011</div>
+		<div class="messageContent">elevator might close after harvest. grandfather hauled first load 1923</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Committee - October 1, 2011</div>
+		<div class="messageContent">if windows crack in storms leave damage unless dangerous. tape cross patterns for safety</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - December 18, 2011</div>
+		<div class="messageContent">unusual warm wind midnight. bell rope moved on its own. second time logged</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - December 31, 2011</div>
+		<div class="messageContent">odd breeze again warm for date. bell rope hummed nobody in church</div>
+	</div>
+
+	<!-- 2012 -->
+	<div class="message">
+		<div class="messageHeader">Posted by Wally T. - January 18, 2012</div>
+		<div class="messageContent">seeing lights moving wrong in sky. not planes satellites. folks think im drinking too much but know what i seen</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by invalid - January 22, 2012</div>
+		<div class="messageContent">Circle north quarter faint under snow. 20 feet diameter. Dogs won't cross. Marked stakes.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Wally T. - February 8, 2012</div>
+		<div class="messageContent">who even cares im over it you people sitting around letting this town go to sh*t. go to church more why dont you? dumbasses. no one wants to learn to work they wanna go to the city for school. then what? you owe them all your money and your soul basically and leave without learning flat nothing.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Wally T. - February 8, 2012</div>
+		<div class="messageContent">was better when i was growing up and i grew up with out power my mom was born here by the midwife. i saw that building become a hall then a community centre then a grocery store and now its a boarded up real estate office. nice change thanks everyone give yourself a round of applause</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Wally T. - February 9, 2012</div>
+		<div class="messageContent">[REMOVED BY MODERATOR - PENDING REVIEW]</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Jessica S. - February 10, 2012</div>
+		<div class="messageContent">your drunk wally lol</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Tommy K. - February 11, 2012</div>
+		<div class="messageContent">we should make a facebook page. this site SUUUUCKS!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Committee - February 15, 2012</div>
+		<div class="messageContent">Community notice: Walter Tkachuk hasn't been seen at the Co-op or post office in over two weeks. If anyone knows his whereabouts, please contact the committee immediately. We're concerned for his welfare.</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - February 12, 2012</div>
+		<div class="messageContent">saw a perfect ring around the moon last night. old-timers say that means weather coming within 48 hours. keep diesel topped up</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Anna T. - March 9, 2012</div>
+		<div class="messageContent">parent council bake sale raised $184 for library books. marie kowalskis butter tarts were first to sell out!</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Elena P. - April 15, 2012</div>
+		<div class="messageContent">snow squall and thunderstorm in the same hour yesterday!! never experienced anything quite like it. power flickered twice during the thunder. strange feeling in the air</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Peter S. - April 30, 2012</div>
+		<div class="messageContent">sheet metal on the pump house curled upward during last weeks storm. no footprints anywhere near it no fallen branches. left it alone—somehow it looks right that way</div>
+	</div>
+	<div class="message">
+		<div class="messageHeader">Posted by Martha K. - May 20, 2012</div>
+		<div class="messageContent">barometric pressure dropping in precise steps all week: 30.12, 30.09, 30.06, 30.03. very unusual pattern. anticipating significant weather event tonight. if youre traveling watch the sky carefully</div>
+	</div>
+</div>
+
+<!-- End of copy-paste block -->
